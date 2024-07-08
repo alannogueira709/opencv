@@ -1,24 +1,37 @@
+## you can access the tutorial for this code in here: https://www.youtube.com/watch?v=dY29JzuMJJU
+
 import cv2
 import face_recognition
 
 known_face_encodigns = []
 known_face_names = []
 
-known_person1_image = face_recognition.load_image_file("person1.jpg")
-known_person2_image = face_recognition.load_image_file("person2.jpg")
-known_person3_image = face_recognition.load_image_file("person3.jpg")
+
+known_person1_image = face_recognition.load_image_file("dataset/alan.jpg")
+known_person2_image = face_recognition.load_image_file("dataset/elber.jpeg")
+known_person3_image = face_recognition.load_image_file("dataset/gustavo.jpg")
+known_person4_image = face_recognition.load_image_file("dataset/rinaldo.jpg")
+known_person5_image = face_recognition.load_image_file("dataset/guizuxo.jpg")
+
 
 known_person1_encoding = face_recognition.face_encodings(known_person1_image)[0]
 known_person2_encoding = face_recognition.face_encodings(known_person2_image)[0]
 known_person3_encoding = face_recognition.face_encodings(known_person3_image)[0]
+known_person4_encoding = face_recognition.face_encodings(known_person4_image)[0]
+known_person5_encoding = face_recognition.face_encodings(known_person5_image)[0]
+
 
 known_face_encodigns.append(known_person1_encoding)
 known_face_encodigns.append(known_person2_encoding)
 known_face_encodigns.append(known_person3_encoding)
+known_face_encodigns.append(known_person4_encoding)
+known_face_encodigns.append(known_person5_encoding)
 
-known_face_names.append("Person 1")
-known_face_names.append("Person 2")
-known_face_names.append("Person 3")
+known_face_names.append("Alan")
+known_face_names.append("Elber")
+known_face_names.append("Gustavo")
+known_face_names.append("Rinaldo")
+known_face_names.append("Guilherme")
 
 camera = cv2.VideoCapture(0)
 
